@@ -1,0 +1,3 @@
+import {useState} from 'react';import Background from './components/Background';import Sidebar from './components/Sidebar';
+import Home from './pages/Home';import Chat from './pages/Chat';import TextStudio from './pages/TextStudio';import ImageStudio from './pages/ImageStudio';import VoiceStudio from './pages/VoiceStudio';import Dashboard from './pages/Dashboard';
+export default function App(){const[page,setPage]=useState('home');let C={home:Home,chat:Chat,text:TextStudio,image:ImageStudio,voice:VoiceStudio,dashboard:Dashboard}[page]||Home;return <><Background/><Sidebar page={page} setPage={setPage}/><div className="app"><header><span className="live"><i/> SYSTEM ONLINE</span><span>GenAI Universe • Multimodal AI Studio</span></header><C setPage={setPage}/></div></>}
